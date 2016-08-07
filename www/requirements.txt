@@ -1,3 +1,7 @@
 aiohttp==0.22.5
 aiomysql==0.0.7
 Jinja2==2.8
+SQLAlchemy==1.0.14
+gunicorn==19.6.0
+aiohttp-jinja2==0.8.0
+Jinja2==2.9.dev0
