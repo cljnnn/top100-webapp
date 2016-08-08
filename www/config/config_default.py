@@ -5,6 +5,7 @@ configs = {
         'user': 'root',
         'password': 'root',
         'db': 'test',
-        'charset': 'utf8'
+        'charset': 'utf8',
+        'autocommit': True,
     }
 }
