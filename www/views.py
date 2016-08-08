@@ -9,7 +9,7 @@ def index(request):
 @aiohttp_jinja2.template('list.html')
 def db_update(request):
     with (yield from request.app['db']) as conn:
-        query = update_table.select()
+        query = update_table.select().order_by(update_table.c.id.desc()).limit(20)
         update_list = yield from conn.execute(query)
 
     if not update_list:
