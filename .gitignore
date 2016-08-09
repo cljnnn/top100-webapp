@@ -1,0 +1,4 @@
+__pycache__/
+/www/config/config_override.py
+/log/
+/www/envpython/
