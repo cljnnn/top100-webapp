@@ -4,3 +4,4 @@ Jinja2==2.8
 SQLAlchemy==1.0.14
 gunicorn==19.6.0
 aiohttp-jinja2==0.8.0
+ujson

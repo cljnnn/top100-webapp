@@ -1,13 +1,13 @@
 import asyncio, aiohttp_jinja2
 from aiohttp import web
 from storage import update_table
-from utils import ConnectionContextManager
+from utils import ConnectionContextManager, json_response
 
 @aiohttp_jinja2.template('index.html')
 def index(request):
     return {'is_index': True}
 
-@aiohttp_jinja2.template('list.html')
+#@aiohttp_jinja2.template('list.html')
 async def db_update(request):
     async with ConnectionContextManager(request.app['db']) as conn:
         query = update_table.select().order_by(update_table.c.id.desc()).limit(20)
@@ -16,4 +16,5 @@ async def db_update(request):
     if not update_list:
         raise web.HTTPNotFound()
 
+    return json_response(update_list)
     return {'update_list': update_list}
