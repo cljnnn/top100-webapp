@@ -1,13 +1,13 @@
-<!DOCTYPE html>
+{% extends '__base__.html' %}
+{% block title %}最新更新{% endblock %}
 <html>
 <head>
     <meta charset="utf-8" />
     <title>Update List - Awesome Python Webapp</title>
 </head>
-<body>
+{% block body %}
     <h1>All updates</h1>
     {% for u in update_list %}
     <p>{{ u.id }} / {{ u.time }} / {{u.total_online}}</p>
     {% endfor %}
-</body>
-</html>
+{% endblock %}
